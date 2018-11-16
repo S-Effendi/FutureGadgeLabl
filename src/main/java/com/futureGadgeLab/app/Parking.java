@@ -1,7 +1,6 @@
 package com.futureGadgeLab.app;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Parking {
     private int ticketId, lotId;
@@ -30,7 +29,8 @@ public class Parking {
         this.ticketId = ticketId;
     }
 
-    public int getLotId(){ return lotId; }
+    public int getLotId(int lotId){
+        return lotId; }
     public void setLotId(int lotId) { this.lotId = lotId; }
 
     public Date getEntryTime(){
