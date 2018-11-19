@@ -1,28 +1,24 @@
-package com.futureGadgeLab.app;
+package java.com.futureGadgeLab.app;
 
-import org.junit.Assert;
-import org.junit.BeforeClass;
+import com.futureGadgeLab.app.ParkingTicket;
+import org.junit.Before;
 import org.junit.Test;
 
-import javax.ws.rs.core.Response;
+import static org.junit.Assert.assertEquals;
 
 public class TestParkingTicket
 {
+    ParkingTicket parkingTicket;
 
-//    @BeforeClass
-//    public static void setup() {
-//
-//    }@Test
-//public void parkingTicketTest(){
-//    try {
-//
-//
-//        Assert.assertEquals(Response.Status.OK.getStatusCode(),
-//                response.getStatus());
-//        Assert.assertEquals("hello", response.getContentAsString());
-//    }
-//    catch (URISyntaxException e){
-//        e.printStackTrace();
-//    }
-//}
+    @Before
+    public void setUp() throws Exception {
+        parkingTicket = new ParkingTicket();
+    }
+
+    @Test
+    public void testDuration(){
+        int result = parkingTicket.getDuration();
+        assertEquals(" ", result);
+    }
+
 }

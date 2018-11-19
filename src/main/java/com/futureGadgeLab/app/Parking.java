@@ -6,6 +6,8 @@ public class Parking {
     private int ticketId, lotId;
     private Date entryTime, exitTime;
     private BigDecimal fee;
+    protected Boolean ticketIssued;
+    protected int duration;
 
     /**
      * Used to establish attributes within a row in the Parking table
@@ -26,11 +28,11 @@ public class Parking {
         return ticketId;
     }
     public void setTicketId(int ticketId){
+        ticketIssued = true;
         this.ticketId = ticketId;
     }
 
-    public int getLotId(int lotId){
-        return lotId; }
+    public int getLotId(int lotId){return lotId; }
     public void setLotId(int lotId) { this.lotId = lotId; }
 
     public Date getEntryTime(){

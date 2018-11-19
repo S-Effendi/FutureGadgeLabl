@@ -3,7 +3,7 @@ package com.futureGadgeLab.app;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class ParkingFee implements ParkingRequirements {
+public class ParkingFee implements ParkingDisplay {
 
     public int ticketId;
     private Date entryTime;

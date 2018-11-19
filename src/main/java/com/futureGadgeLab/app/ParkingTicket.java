@@ -1,25 +1,28 @@
 package com.futureGadgeLab.app;
 
-import java.math.BigDecimal;
-import java.util.concurrent.atomic.AtomicInteger;
+public class ParkingTicket {
 
-public class ParkingTicket implements ParkingRequirements {
+    protected int duration;
+    Parking parking;
 
-    private int ticketId;
-    private AtomicInteger lotId;
-    private int availableParking;
+    public int getDuration(){
 
-    @Override
-    public BigDecimal tariff() {
-//        return tariff;
-        return null;
+        if (parking.ticketIssued == true) {
+
+            int entryTimeHour = parking.getEntryTime().getHours();
+            int entryTimeMinutes = parking.getEntryTime().getMinutes();
+            int exitTimeHour = parking.getExitTime().getHours();
+            int exitTimeMinutes = parking.getExitTime().getMinutes();
+
+            entryTimeHour = entryTimeHour * 60;
+            exitTimeHour = exitTimeHour * 60;
+
+            int entryTime = entryTimeHour + entryTimeMinutes;
+            int exitTime = exitTimeHour + exitTimeMinutes;
+
+            duration = (exitTime - entryTime);
+        }
+        return duration;
     }
-
-    @Override
-    public boolean getTicketId() {
-
-        return false;
-    }
-
 
 }

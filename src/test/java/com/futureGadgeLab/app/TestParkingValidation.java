@@ -1,7 +1,9 @@
-package com.futureGadgeLab.app;
+package java.com.futureGadgeLab.app;
 
+import com.futureGadgeLab.app.ParkingValidation;
 import org.junit.Before;
 import org.junit.Test;
+
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
@@ -15,18 +17,25 @@ public class TestParkingValidation {
     }
 
     @Test
+    public void testParkingAvailabilty() {
+        Boolean result = parkingValidation.getSpaceAvailability();
+
+        assertTrue("There are no parking spaces available", result);
+    }
+
+
+    @Test
     public void getAvailableLots(){
         int result = parkingValidation.getAvailableLots();
 
         assertEquals(1, result);
     }
 
-
     @Test
-    public void testParkingAvailabilty() {
-        Boolean result = parkingValidation.getValidation();
+    public void getAvailableSpaces(){
+        int result = parkingValidation.getAvailableSpaces();
 
-        assertTrue("There are no parking spaces available", result);
+        assertEquals(50, result);
     }
 
     @Test

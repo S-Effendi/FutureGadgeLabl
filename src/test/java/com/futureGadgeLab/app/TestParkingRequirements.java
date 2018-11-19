@@ -1,10 +1,4 @@
-package com.futureGadgeLab.app;
-
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import javax.ws.rs.core.Response;
+package java.com.futureGadgeLab.app;
 
 public class TestParkingRequirements
 {

@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ParkingValidation
 {
 
-    private Boolean validation;
+    private Boolean spaceAvailability = false;
     private int availableSpaces, currentLotId = 1;
 
     private AtomicInteger parkingLots = new AtomicInteger (5);
@@ -15,8 +15,10 @@ public class ParkingValidation
     }
 
 
-    public Boolean getValidation() {
-        return true;
+    public Boolean getSpaceAvailability() {
+        if(getAvailableLots() == 1 && availableSpaces == 50)
+        spaceAvailability = true;
+        return spaceAvailability;
     }
 
     public int getAvailableLots() {
@@ -38,6 +40,12 @@ public class ParkingValidation
     }
 
         public int getAvailableSpaces () {
-            return 0;
+
+            if(getSpaceAvailability()== true && availableSpaces == 50) {
+                if (parking.ticketIssued == true){
+                    availableSpaces--;
+            }
+        }
+            return availableSpaces;
     }
 }
